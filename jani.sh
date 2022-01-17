@@ -1,3 +1,5 @@
 #!/bin/bash
-git commit -a -m "autoupdate `date +%F-%T`"
-git push origin main
+file= git diff --name-only
+echo $file
+
+git commit -a -m "autoupdate $file `date +%F-%T`"
