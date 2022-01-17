@@ -1,9 +1,10 @@
 #!/bin/bash
 
 file= git diff --name-only
-read $file
+
+echo "$file autoupdated `date +%F-%T`"
 
 
 git add .
-git commit -a -m "autoupdate $file `date +%F-%T`"
+git commit -a -m "$file autoupdated `date +%F-%T`"
 git push origin main
