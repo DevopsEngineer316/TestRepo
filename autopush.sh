@@ -1,7 +1,7 @@
 #!/bin/bash
 
 file= git diff --name-only
-read file
+read $file
 
 
 git add .
