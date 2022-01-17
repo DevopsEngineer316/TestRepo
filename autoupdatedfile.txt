@@ -1,10 +1,27 @@
 diff --git a/abi.php b/abi.php
-index dec9bc3..0b9b032 100644
+index 0b9b032..1fe8d98 100644
 --- a/abi.php
 +++ b/abi.php
-@@ -1,4 +1,4 @@
--HELOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-+UPDATED FILE UPLOADING
+@@ -1,4 +1,7 @@
++NEW LINE ADDED
++
+ UPDATED FILE UPLOADING
  
  
++
  NEW FILE FOR ABI
+diff --git a/autoupdatedfile.txt b/autoupdatedfile.txt
+index 6fd293d..e69de29 100644
+--- a/autoupdatedfile.txt
++++ b/autoupdatedfile.txt
+@@ -1,10 +0,0 @@
+-diff --git a/abi.php b/abi.php
+-index dec9bc3..0b9b032 100644
+---- a/abi.php
+-+++ b/abi.php
+-@@ -1,4 +1,4 @@
+--HELOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+-+UPDATED FILE UPLOADING
+- 
+- 
+- NEW FILE FOR ABI
