@@ -5,5 +5,5 @@ read $file
 
 
 git add .
-git commit -a -m "autoupdate `$file date +%F-%T`"
+git commit -a -m "autoupdate $file `date +%F-%T`"
 git push origin main
