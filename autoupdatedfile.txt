@@ -1,27 +1,69 @@
+diff --git a/1 b/1
+deleted file mode 100644
+index 793907e..0000000
+--- a/1
++++ /dev/null
+@@ -1,3 +0,0 @@
+-#!/bin/bash
+-git commit -a -m "autoupdate `date +%F-%T`"
+-git push origin main
 diff --git a/abi.php b/abi.php
-index 0b9b032..1fe8d98 100644
+index 1fe8d98..0c777d4 100644
 --- a/abi.php
 +++ b/abi.php
-@@ -1,4 +1,7 @@
-+NEW LINE ADDED
-+
+@@ -1,5 +1,6 @@
++UPDATED
+ NEW LINE ADDED
+-
++SECOND NEW LINE ADDED
  UPDATED FILE UPLOADING
  
  
+diff --git a/autopush.sh b/autopush.sh
+index b8c1440..2515e9a 100644
+--- a/autopush.sh
++++ b/autopush.sh
+@@ -1,7 +1,10 @@
+ #!/bin/bash
+ 
+ git diff > autoupdatedfile.txt
++file= git diff --name-only
 +
- NEW FILE FOR ABI
++
+ 
+ git add .
+-git commit -a -m "autoupdate `date +%F-%T`"
++git commit -a -m "$file autoupdate `date +%F-%T`"
+ git push origin main
 diff --git a/autoupdatedfile.txt b/autoupdatedfile.txt
-index 6fd293d..e69de29 100644
+index 0b3dd6f..e69de29 100644
 --- a/autoupdatedfile.txt
 +++ b/autoupdatedfile.txt
-@@ -1,10 +0,0 @@
+@@ -1,27 +0,0 @@
 -diff --git a/abi.php b/abi.php
--index dec9bc3..0b9b032 100644
+-index 0b9b032..1fe8d98 100644
 ---- a/abi.php
 -+++ b/abi.php
--@@ -1,4 +1,4 @@
---HELOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
--+UPDATED FILE UPLOADING
+-@@ -1,4 +1,7 @@
+-+NEW LINE ADDED
+-+
+- UPDATED FILE UPLOADING
 - 
 - 
+-+
 - NEW FILE FOR ABI
+-diff --git a/autoupdatedfile.txt b/autoupdatedfile.txt
+-index 6fd293d..e69de29 100644
+---- a/autoupdatedfile.txt
+-+++ b/autoupdatedfile.txt
+-@@ -1,10 +0,0 @@
+--diff --git a/abi.php b/abi.php
+--index dec9bc3..0b9b032 100644
+----- a/abi.php
+--+++ b/abi.php
+--@@ -1,4 +1,4 @@
+---HELOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+--+UPDATED FILE UPLOADING
+-- 
+-- 
+-- NEW FILE FOR ABI
