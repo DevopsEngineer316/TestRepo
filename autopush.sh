@@ -1,8 +1,7 @@
 #!/bin/bash
 
-git diff > autoupdatedfile.txt
 file= git diff --name-only
-
+read file
 
 
 git add .
