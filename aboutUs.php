@@ -3,7 +3,7 @@
 		<!--using external files-->
 		<?php require('import.html') ?>
 		
-		<title>U Chen  Daily | About Us</title>
+		<title>You Chen  Daily | About Us</title>
 	</head>
 	<body>
 		<!--using external files-->
