@@ -18,7 +18,7 @@ DBNAME=Testgitdatabase
 
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
-INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, '$file' , "test", now());
+INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "'$file'" , "test", now());
 EOF
 
 git add .
