@@ -20,7 +20,7 @@ DBNAME=Testgitdatabase
 
 DBPATH=/var/www/html/gitdatabase
 
-if [ $file != NULL ]; then
+if [ -z "$file" ]; then
 mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 
 
