@@ -22,5 +22,5 @@ EOF
 
 git add 
 git commit -a -m "$file autoupdated `date +%F-%T`"
-git push origin master
+git push origin main
 
