@@ -21,7 +21,7 @@ DBNAME=Testgitdatabase
 DBPATH=/var/www/html/gitdatabase
 
 #if [ $file != NULL ]; then
-mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > "$DBPATH\$DBNAME_$(date +\%d-\%m-\%Y-\%H-\%M).sql"
+mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME_$(date +\%d-\%m-\%Y-\%H-\%M).sql
 
 
 #fi
