@@ -31,7 +31,7 @@ fi
 #content = git diff
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
-INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "file", "content", now());
+INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$file", "content", now());
 EOF
 
 #INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, 'TEST', 'TEST', now());
