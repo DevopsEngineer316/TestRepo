@@ -18,18 +18,19 @@ DBPASS=Gitpassword1!
 
 DBNAME=Testgitdatabase
 
-DBPATH= /var/www/html/gitdatabase
+DBPATH= /var/www/html/gitdatabase/
 
 if [ file != git diff --name-only ]; then
 mysqldump -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME.sql
 
+
 fi
 
 
-time= $(date +"%H:%M:%S")
-conflicts_content = git diff
+#time= $(date +"%H:%M:%S")
+content = git diff
 
-INSERT INTO conflicts(id, filename, conflict_content, time) VALUES (1, $file, $conflicts_content, $time);
+INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, $file, $content, now());
 
 
 git add .
