@@ -32,10 +32,8 @@ fi
 
 git add .
 git pull origin main
-varstatus=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
-
-git push origin main
-
+git commit -a -m "$file autoupdated `date +%F-%T`"
+varstatus=$(push origin main 2>&1)
 
 #time= $(date +"%H:%M:%S")
 #content = git diff
