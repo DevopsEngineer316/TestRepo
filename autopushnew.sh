@@ -31,10 +31,10 @@ fi
 
 
 git add .
-git pull origin main
+varstatus=$(git pull origin main 2>&1)
 git commit -a -m "$file autoupdated `date +%F-%T`"
-varstatus=$(git push origin main 2>&1)
 
+git push origin main
 #time= $(date +"%H:%M:%S")
 #content = git diff
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
