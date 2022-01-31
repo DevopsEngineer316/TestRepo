@@ -38,6 +38,6 @@ EOF
 
 
 git add .
+git pull origin main
 git commit -a -m "$file autoupdated `date +%F-%T`"
 git push origin main
-
