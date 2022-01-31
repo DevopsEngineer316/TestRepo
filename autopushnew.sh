@@ -27,17 +27,21 @@ mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date
 fi
 
 
-#time= $(date +"%H:%M:%S")
-#content = git diff
-mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
-use $DBNAME
-INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$file", "content", now());
-EOF
 
-#INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, 'TEST', 'TEST', now());
 
 
 git add .
 git pull origin main
-git commit -a -m "$file autoupdated `date +%F-%T`"
+varstatus=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
+
 git push origin main
+
+
+#time= $(date +"%H:%M:%S")
+#content = git diff
+mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
+use $DBNAME
+INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus", "content", now());
+EOF
+
+#INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, 'TEST', 'TEST', now());
