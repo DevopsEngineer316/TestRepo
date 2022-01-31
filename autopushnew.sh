@@ -31,15 +31,19 @@ fi
 
 
 git add .
-varstatus=$(git pull origin main 2>&1)
-git commit -a -m "$file autoupdated `date +%F-%T`"
 
-git push origin main
+
+varstatus_pull=$(git pull origin main 2>&1)
+varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
+varstatus_push=$(git push origin main 2>&1)
+
+
+
 #time= $(date +"%H:%M:%S")
 #content = git diff
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
-INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus", "content", now());
+INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt $varstatus_push", "content", now());
 EOF
 
 #INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, 'TEST', 'TEST', now());
