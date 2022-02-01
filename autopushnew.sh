@@ -39,4 +39,8 @@ use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
 EOF
 
+else
+
+git push origin main
+
 fi
