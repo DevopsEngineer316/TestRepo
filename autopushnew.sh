@@ -41,6 +41,7 @@ EOF
 
 else
 
+echo "New files are uploaded in gitHub"
 git push origin main
 
 fi
