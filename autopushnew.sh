@@ -41,4 +41,3 @@ INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pul
 
 if
 EOF
-#INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, 'TEST', 'TEST', now());
