@@ -37,8 +37,8 @@ mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
-EOF
+
 
 if
-
+EOF
 #INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, 'TEST', 'TEST', now());
