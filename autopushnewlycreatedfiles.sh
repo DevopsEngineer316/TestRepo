@@ -2,6 +2,7 @@
 
 untrackedfile= git ls-files --others --exclude-standard
 git add $(git ls-files -o --exclude-standard)
+echo $untrackedfile
 varstatus_commit=$(git commit -a -m "$(git ls-files -o --exclude-standard autoupdated) `date +%F-%T`" 2>&1)
 if [ -z "$untrackedfile" ]; then
 
