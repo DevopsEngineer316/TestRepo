@@ -34,7 +34,7 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    merge_conflict="There is a merge conflict. Aborting"
    git merge --abort
    exit 1
-   f
+   
    else
      echo "no prob"
      varstatus_pull=$(git pull origin main 2>&1)
@@ -43,7 +43,7 @@ if [ "$CONFLICTS" -gt 0 ] ; then
      varstatus_push=$(git push origin main 2>&1)
      echo "New files are uploaded in gitHub"
      echo "$varstatus_push"
-    fi
+  fi
 
 
 
