@@ -30,7 +30,7 @@ varstatus_pull=$(git pull origin main 2>&1)
 CONFLICTS=$(git ls-files -u | wc -l)
 echo "conffff"
 echo "$CONFLICTS"
-if [ $CONFLICTS -lt 0 ] ; then
+if [ "$CONFLICTS" -lt 0 ] ; then
    echo "There is a merge conflict. Aborting"
    merge_conflict="There is a merge conflict. Aborting"
    git merge --abort
