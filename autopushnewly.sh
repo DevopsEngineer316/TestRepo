@@ -3,7 +3,7 @@
 file= git diff --name-only
 
 echo "$file autoupdated `date +%F-%T`"
-
+echo $file
 ## declare mail variables
 ##email subject
 subject="File Verison changed Alert"
