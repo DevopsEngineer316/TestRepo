@@ -52,3 +52,5 @@ git push origin main
 echo "New files are uploaded in gitHub"
 #echo "$varstatus_push"
 fi
+
+fi
