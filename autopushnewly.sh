@@ -28,7 +28,7 @@ varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 
 
 if [ -z "$file" ]; then
-(mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
+mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 
 
 
@@ -38,9 +38,9 @@ mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
 EOF
-)
+
 else
-(
+
 untrackedfile= git ls-files --others --exclude-standard
 git add $untrackedfile
 echo $untrackedfile
@@ -51,5 +51,4 @@ if [ -z "$untrackedfile" ]; then
 git push origin main
 echo "New files are uploaded in gitHub"
 #echo "$varstatus_push"
-)
 fi
