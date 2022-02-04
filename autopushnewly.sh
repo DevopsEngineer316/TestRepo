@@ -20,7 +20,7 @@ DBNAME=Testgitdatabase
 
 DBPATH=/var/www/html/gitdatabase
 
-git add $file4
+git add .
 
 varstatus_pull=$(git pull origin main 2>&1)
 varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
@@ -42,7 +42,7 @@ EOF
 else
 
 untrackedfile= git ls-files --others --exclude-standard
-git add $untrackedfile
+git add .
 echo $untrackedfile
 git commit -a -m " autoupdated `date +%F-%T`" $untrackedfile
 if [ -z "$untrackedfile" ]; then
