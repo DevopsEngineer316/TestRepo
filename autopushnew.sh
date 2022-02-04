@@ -25,6 +25,7 @@ DBPATH=/var/www/html/gitdatabase
 git add .
 
 varstatus_pull=$(git pull origin main 2>&1)
+   echo "$varstatus_pull"
 
 CONFLICTS=$(git ls-files -u | wc -l)
 if [ "$CONFLICTS" -gt 0 ] ; then
