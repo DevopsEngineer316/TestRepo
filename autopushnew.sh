@@ -34,7 +34,6 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    merge_conflict="There is a merge conflict. Aborting"
    git merge --abort
    exit 1
-   
    else
      echo "no prob"
      varstatus_pull=$(git pull origin main 2>&1)
