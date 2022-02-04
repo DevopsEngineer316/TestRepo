@@ -35,6 +35,7 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    f
    else
      echo "no prob"
+     varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
      varstatus_push=$(git push origin main 2>&1)
      git push origin main
      echo "New files are uploaded in gitHub"
@@ -43,7 +44,7 @@ if [ "$CONFLICTS" -gt 0 ] ; then
 
 
 
-varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
+
 mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
