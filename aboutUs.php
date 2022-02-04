@@ -3,7 +3,7 @@
 		<!--using external files-->
 		<?php require('import.html') ?>
 		
-		<title>HI....About Us</title>
+		<title>hi..oAbout Us</title>
 	</head>
 	<body>
 		<!--using external files-->
