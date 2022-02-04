@@ -24,8 +24,7 @@ DBPATH=/var/www/html/gitdatabase
 
 git add .
 
-varstatus_pull=$(git pull origin main 2>&1)
-   echo "$varstatus_pull"
+
 
 CONFLICTS=$(git ls-files -u | wc -l)
 echo "conf"
@@ -38,6 +37,8 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    f
    else
      echo "no prob"
+     varstatus_pull=$(git pull origin main 2>&1)
+        echo "$varstatus_pull"
      varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
      varstatus_push=$(git push origin main 2>&1)
      echo "New files are uploaded in gitHub"
