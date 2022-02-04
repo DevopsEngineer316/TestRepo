@@ -43,6 +43,7 @@ if [ "$CONFLICTS" -gt 0 ] ; then
      varstatus_push=$(git push origin main 2>&1)
      echo "New files are uploaded in gitHub"
      echo "$varstatus_push"
+     fi
 
 
 
