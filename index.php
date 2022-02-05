@@ -1,3 +1,2 @@
 <?php
-phpinfo();
-?>
+echo "New php file edited" 

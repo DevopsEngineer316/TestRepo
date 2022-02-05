@@ -1,3 +1,3 @@
-kkk
+hi 
+new file added
 
-this is the new line going to merge in the main 
