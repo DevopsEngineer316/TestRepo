@@ -1,2 +1,3 @@
 <?php
-echo "New php file edited" 
+echo "New index php updated"
+?>
