@@ -1,5 +1,4 @@
 #!/bin/bash
-
 git checkout Newbranch
 
 DBUSER=gituser
