@@ -48,7 +48,7 @@ git commit -a -m " autoupdated `date +%F-%T`" $untrackedfile
 if [ -z "$untrackedfile" ]; then
 
 #varstatus_push=$(git push origin main 2>&1)
-git push origin Newbranch
+git push origin  Newbranch
 echo "New files are uploaded in gitHub"
 #echo "$varstatus_push"
 fi
