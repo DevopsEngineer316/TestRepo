@@ -1,11 +1,13 @@
 #!/bin/bash
 
+git checkout Newbranch
 
+#Checking for any existing file change
 file= git diff --name-only
 
 echo "$file autoupdated `date +%F-%T`"
 
-git checkout Newbranch
+#git checkout Newbranch
 
 DBUSER=gituser
 
@@ -16,7 +18,7 @@ DBNAME=Testgitdatabase
 DBPATH=/var/www/html/gitdatabase
 
 git add .
-
+git commit -m "$file autoupdated `date +%F-%T`"
 varstatus_pull=$(git pull origin main 2>&1)
 varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 
@@ -39,6 +41,7 @@ echo "Conflict occurs"
 
 else
 
+#checks for any new files created
 untrackedfile= git ls-files --others --exclude-standard
 git checkout main
 git add .
