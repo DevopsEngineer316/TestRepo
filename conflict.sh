@@ -43,9 +43,11 @@ git add .
 echo $untrackedfile
 git commit -a -m " file autoupdated `date +%F-%T`" 
 if [ -z "$untrackedfile" ]; then
-echo "New files are uploaded in gitHub"
+#echo "New files are uploaded in gitHub"
 git push origin main
-echo "push completed"
+#echo "push completed"
+else
+ecgo "Push Aborted"
 fi
 
 
