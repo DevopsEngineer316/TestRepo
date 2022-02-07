@@ -37,7 +37,7 @@ echo "Conflict occurs"
 
 
 #checks for any new files created
-untrackedfile= git ls-files --others --exclude-standard
+untrackedfile= $(git ls-files --others --exclude-standard | wc -l)
 #git checkout main
 git add .
 echo $untrackedfile
