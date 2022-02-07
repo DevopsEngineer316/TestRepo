@@ -47,7 +47,7 @@ if [ -z "$untrackedfile" ]; then
 git push origin main
 #echo "push completed"
 else
-ecgo "Push Aborted"
+echo "Push Aborted"
 fi
 
 
