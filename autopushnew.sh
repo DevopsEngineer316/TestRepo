@@ -26,8 +26,8 @@ git add .
 
 
 
-#CONFLICTS=$(git ls-files -u | wc -l)
-CONFLICTS=$(git ls-files --others --exclude-standard | wc -l)
+CONFLICTS=$(git ls-files -u | wc -l)
+#CONFLICTS=$(git ls-files --others --exclude-standard | wc -l)
 echo "conf"
 echo "$CONFLICTS"
 if [ "$CONFLICTS" -gt 0 ] ; then
