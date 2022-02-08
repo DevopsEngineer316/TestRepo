@@ -23,12 +23,18 @@ varstatus_pull=$(git pull origin main 2>&1)
 varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 
 
+<<<<<<< HEAD
 if [ -n "$file" ] 
 then
 mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 
 
+=======
+if [ -n "$file" ]
+then
+>>>>>>> d22da8a87849475453d9d42449397802a6a92381
 
+mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
@@ -51,7 +57,7 @@ git commit -a -m " file autoupdated `date +%F-%T`"
 if [ -n "$untrackedfile" ]
 then
 echo "New files are uploaded in gitHub"
-git push origin Newbranch
+git push origin main
 echo "push completed"
 fi
 
