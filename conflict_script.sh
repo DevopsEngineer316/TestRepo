@@ -37,7 +37,7 @@ EOF
 git pull origin main
 git checkout main
 git merge Newbranch
-echo "Conflict occurs"
+#echo "Conflict occurs"
 
 else
 
