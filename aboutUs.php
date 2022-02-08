@@ -5,7 +5,7 @@ New line added
 		<!--using external files-->
 		<?php require('import.html') ?>
 		
-		<title>About Us</title>
+		<title>Hi Everybody About Us</title>
 	</head>
 	<body>
 		<!--using external files-->
