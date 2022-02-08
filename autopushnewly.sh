@@ -39,6 +39,7 @@ use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
 EOF
 
+echo "New edited file added in Database"
 else
 
 untrackedfile= git ls-files --others --exclude-standard
