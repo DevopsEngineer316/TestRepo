@@ -23,7 +23,7 @@ varstatus_pull=$(git pull origin main 2>&1)
 varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 
 
-if [ -z "$file" ]; then
+if [ -n "$file" ] then
 mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 
 
@@ -37,7 +37,7 @@ EOF
 git pull origin main
 git checkout main
 git merge Newbranch
-#echo "Conflict occurs"
+echo "Conflict occurs"
 
 else
 
