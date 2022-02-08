@@ -5,11 +5,12 @@ git add .
 echo $untrackedfile
 git commit -a -m " file autoupdated `date +%F-%T`"
 if [[ -n "$untrackedfile" ]]
+
 then
-git push origin main
-echo "New files are uploaded in gitHub"
+  git push origin main
+  echo "New files are uploaded in gitHub"
 
 else
-echo "Push aborted"
+  echo "Push aborted"
 fi
 
