@@ -42,15 +42,15 @@ EOF
 echo "New edited file added in Database"
 else
 
-untrackedfile= git ls-files --others --exclude-standard
-echo $untrackedfile
-git commit -a -m " autoupdated `date +%F-%T`" 
-if [ -z "$untrackedfile" ]; then
+#untrackedfile= git ls-files --others --exclude-standard
+#echo $untrackedfile
+#git commit -a -m " autoupdated `date +%F-%T`" 
+#if [ -z "$untrackedfile" ]; then
 
 #varstatus_push=$(git push origin main 2>&1)
 git push origin  main
 echo "New files are uploaded in gitHub"
 #echo "$varstatus_push"
-fi
+#fi
 
 fi
