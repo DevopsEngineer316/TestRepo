@@ -6,7 +6,7 @@ git commit -a -m " file autoupdated `date +%F-%T`"
 if [ -z "$untrackedfile" ];
 then
   git push origin Newbranch 
-#  echo "New files are uploaded in gitHub"
+  echo "New files are uploaded in gitHub"
 #else
 #  echo "Push aborted"
 fi
