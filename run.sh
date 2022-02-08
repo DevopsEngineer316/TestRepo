@@ -6,7 +6,7 @@ echo $untrackedfile
 
 
 git commit -a -m " file autoupdated `date +%F-%T`"
-if [ -n "$untrackedfile" ]
+if [ -z "$untrackedfile" ]
 then
 echo "New files are uploaded in gitHub"
 git push origin main --force
