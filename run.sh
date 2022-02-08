@@ -1,19 +1,15 @@
 #!/bin/bash
- 
-#read -p "Enter numeric value: " myvar
-
-
 untrackedfile= git ls-files --others --exclude-standard
-#git checkout main
-#git add .
+git checkout main
+git add .
 echo $untrackedfile
-#git commit -a -m " file autoupdated `date +%F-%T`"
-if [[ -z "$untrackedfile" ]];
+
+
+git commit -a -m " file autoupdated `date +%F-%T`"
+if [ -n "$untrackedfile" ]
 then
-   git add .
-   git commit -m "New file updated"
-   git push origin main
-   echo "Value is greater than 10"
-else
-    echo "No input"
+echo "New files are uploaded in gitHub"
+git push origin main --force
+echo "push completed"
 fi
+ 
