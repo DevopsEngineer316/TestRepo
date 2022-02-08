@@ -49,7 +49,7 @@ git commit -a -m " file autoupdated `date +%F-%T`"
 if [ -n "$untrackedfile" ]
 then
 echo "New files are uploaded in gitHub"
-git push origin Newbranch
+git push origin main
 echo "push completed"
 fi
 
