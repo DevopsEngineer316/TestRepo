@@ -42,13 +42,12 @@ EOF
 else
 
 untrackedfile= git ls-files --others --exclude-standard
-git add .
 echo $untrackedfile
 git commit -a -m " autoupdated `date +%F-%T`" 
 if [ -z "$untrackedfile" ]; then
 
 #varstatus_push=$(git push origin main 2>&1)
-git push origin  maih
+git push origin  main
 echo "New files are uploaded in gitHub"
 #echo "$varstatus_push"
 fi
