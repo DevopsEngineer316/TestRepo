@@ -49,7 +49,7 @@ else
 
 #varstatus_push=$(git push origin main 2>&1)
 git push origin  main
-echo "New files are uploaded in gitHub"
+echo "Either New files are uploaded in gitHub or no new files"
 #echo "$varstatus_push"
 #fi
 
