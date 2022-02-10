@@ -12,6 +12,8 @@ from="root@qoneqt.com"
 ## sending mail to
 to="support@qoneqt.com"
 
+git checkout backup
+
 DBUSER=gituser
 
 DBPASS=Gitpassword1!
@@ -44,6 +46,10 @@ use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
 EOF
 
+git pull origin main
+git checkout main
+git merge Newbranch
+
 echo "New edited file added in Database"
 else
 
@@ -54,7 +60,7 @@ else
 
 #varstatus_push=$(git push origin main 2>&1)
 git push origin  main
-echo "New files are uploaded in gitHub"
+echo "Either New files are uploaded in gitHub or no new files"
 #echo "$varstatus_push"
 #fi
 
