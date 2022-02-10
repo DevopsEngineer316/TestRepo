@@ -12,6 +12,8 @@ from="root@qoneqt.com"
 ## sending mail to
 to="support@qoneqt.com"
 
+git checkout backup
+
 DBUSER=gituser
 
 DBPASS=Gitpassword1!
@@ -38,6 +40,10 @@ mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
 EOF
+
+git pull origin main
+git checkout main
+git merge Newbranch
 
 echo "New edited file added in Database"
 else
