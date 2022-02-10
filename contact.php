@@ -5,6 +5,7 @@ new line added
 Modified file line
 
 if($_POST) {
+    new line added
     $visitor_name = "";
     $visitor_email = "";
     $email_title = "";

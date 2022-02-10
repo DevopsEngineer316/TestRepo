@@ -46,7 +46,7 @@ EOF
 git pull origin main
 git checkout main
 git merge Newbranch
-echo "Conflict occurs or no new files are added"
+echo "Conflict occurs or no exiting  files are added"
 
 #else
 
