@@ -7,7 +7,7 @@ if [ -z "$untrackedfile" ];
 then
   git push origin main 
   echo "New files are uploaded in gitHub"
-#else
-#  echo "Push aborted"
+else
+  echo "Push aborted or no new files"
 fi
 
