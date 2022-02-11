@@ -29,7 +29,8 @@ varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 #varstatus_push=$(git push origin main 2>&1)
 
 
-if [ -z "$file" ]; then
+if [ -z "$file" ] 
+then
 
 git checkout main
 git pull origin main
