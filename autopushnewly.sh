@@ -24,6 +24,9 @@ DBPATH=/var/www/html/gitdatabase
 
 git add .
 git commit -m "New line updated  "
+
+
+
 varstatus_pull=$(git pull origin main 2>&1)
 varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 #varstatus_push=$(git push origin main 2>&1)
@@ -33,9 +36,16 @@ if [ -z "$file" ]
 then
 
 git checkout main
+
+echo "=============================="
 git pull origin main
+echo "==========PULL Completed================"
 git merge backup
+echo "==========MERGE Completed==============="
 git push origin  main
+
+
+
 echo "Either New files are uploaded in gitHub or no new files"
 
 else
