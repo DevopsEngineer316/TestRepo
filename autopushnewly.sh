@@ -50,6 +50,13 @@ echo "Either New files are uploaded in gitHub or no new files"
 
 else
 
+git checkout main
+
+echo "========================================"
+git pull origin main
+echo "==========PULL Completed================"
+git merge backup
+echo "==========MERGE Completed==============="
 
 mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 
@@ -58,9 +65,6 @@ mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date
 #time= $(date +"%H:%M:%S")
 #content = git diff
 
-git checkout main
-git pull origin main
-git merge backup 
 
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
