@@ -31,7 +31,9 @@ varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 
 if [ -z "$file" ]; then
 
-
+git checkout main
+git pull origin main
+git merge backup
 git push origin  main
 echo "Either New files are uploaded in gitHub or no new files"
 
