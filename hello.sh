@@ -5,12 +5,16 @@ echo $untrackedfile
 git commit -a -m " file autoupdated `date +%F-%T`"
 #if [ "$untrackedfile" != NULL ]
 
-if [ -z "$untrackedfile" ] && echo "NULL" || echo "Not NULL"
 #then
 #  git push origin main 
 #  echo "New files are uploaded in gitHub"
 #else
 #  echo "No new files"
    
+#fi
+if [ ! -n "$untrackedfile" ]
+then
+	echo "$0 - Error \$var not set or NULL"
+else
+	echo "\$var set and now starting $0 shell script..."
 fi
-
