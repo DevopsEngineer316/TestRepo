@@ -30,6 +30,14 @@ varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 
 
 if [ -z "$file" ]; then
+
+
+git push origin  main
+echo "Either New files are uploaded in gitHub or no new files"
+
+else
+
+
 mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date +%F-%T).sql
 
 
@@ -47,7 +55,7 @@ INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pul
 EOF
 
 echo "New edited file added in Database"
-else
+#else
 
 #untrackedfile= git ls-files --others --exclude-standard
 #echo $untrackedfile
@@ -55,8 +63,8 @@ else
 #if [ -z "$untrackedfile" ]; then
 
 #varstatus_push=$(git push origin main 2>&1)
-git push origin  main
-echo "Either New files are uploaded in gitHub or no new files"
+#git push origin  main
+#echo "Either New files are uploaded in gitHub or no new files"
 #echo "$varstatus_push"
 #fi
 
