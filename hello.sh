@@ -12,7 +12,7 @@ git commit -a -m " file autoupdated `date +%F-%T`"
 #  echo "No new files"
    
 #fi
-if [ ! -n "$untrackedfile" ]
+if [ -z "$untrackedfile" ]
 then
 	echo " NULL"
 else
