@@ -23,7 +23,7 @@ DBNAME=Testgitdatabase
 DBPATH=/var/www/html/gitdatabase
 
 git add .
-
+git commit -m "New line updated  "
 varstatus_pull=$(git pull origin main 2>&1)
 varstatus_cmt=$(git commit -a -m "$file autoupdated `date +%F-%T`" 2>&1)
 #varstatus_push=$(git push origin main 2>&1)
@@ -36,14 +36,15 @@ mysqldump --no-tablespaces -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME-$(date
 
 #time= $(date +"%H:%M:%S")
 #content = git diff
+
+git checkout main
+git pull origin main
+git merge backup 
+
 mysql --user=$DBUSER --password=$DBPASS $DBNAME <<EOF
 use $DBNAME
 INSERT INTO conflicts(id, filename, content, time) VALUES (NULL, "$varstatus_pull $varstatus_cmt ", "content", now());
 EOF
-
-git pull origin main
-git checkout main
-git merge Newbranch
 
 echo "New edited file added in Database"
 else
