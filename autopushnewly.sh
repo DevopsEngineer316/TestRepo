@@ -37,7 +37,7 @@ then
 
 git checkout main
 
-echo "=============================="
+echo "========================================"
 git pull origin main
 echo "==========PULL Completed================"
 git merge backup
