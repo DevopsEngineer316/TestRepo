@@ -6,12 +6,12 @@ if [ -n "$file" ]
 then
 
 
-        echo "New files added"
+        echo "push completed"
 #        git push origin main --force
  #       echo "push completed"
 
 
 else
-echo "Conflict occurs"
+echo "conflict occurs"
 
 fi
