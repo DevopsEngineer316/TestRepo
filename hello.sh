@@ -14,7 +14,7 @@ git commit -a -m " file autoupdated `date +%F-%T`"
 #fi
 if [ ! -n "$untrackedfile" ]
 then
-	echo "$0 - Error \$var not set or NULL"
+	echo " NULL"
 else
 	echo "\$var set and now starting $0 shell script..."
 fi
